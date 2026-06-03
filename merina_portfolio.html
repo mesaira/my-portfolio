@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merina Sara Thomas — Finance & Audit Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #fafaf8;
+    --off-white: #f3f1ee;
+    --purple: #5c3d8f;
+    --purple-mid: #7b52b8;
+    --purple-light: #ede8f7;
+    --purple-pale: #f7f4fc;
+    --ink: #1a1520;
+    --ink-mid: #3d3547;
+    --muted: #8a7f99;
+    --border: #e2dded;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 4px 32px rgba(92,61,143,0.07); }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--purple);
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: -3px; left: 0; right: 0; height: 1px;
+    background: var(--purple);
+    transform: scaleX(0); transition: transform 0.25s;
+  }
+  .nav-links a:hover { color: var(--purple); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 2px; background: var(--ink); transition: all 0.3s; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0 4rem;
+    padding-top: 80px;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 45%; height: 100%;
+    background: var(--purple-pale);
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: 0;
+  }
+  .hero-text { position: relative; z-index: 1; }
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; width: 32px; height: 1px; background: var(--purple);
+  }
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--purple);
+  }
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--ink-mid);
+    max-width: 440px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    background: var(--purple);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--purple);
+    transition: background 0.25s, color 0.25s, transform 0.2s;
+  }
+  .btn-primary:hover { background: transparent; color: var(--purple); transform: translateY(-2px); }
+  .btn-secondary {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    border: 2px solid var(--border);
+    color: var(--ink-mid);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: border-color 0.25s, color 0.25s, transform 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--purple); color: var(--purple); transform: translateY(-2px); }
+
+  .hero-visual {
+    position: relative; z-index: 1;
+    display: flex; justify-content: center; align-items: center;
+  }
+  .hero-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    max-width: 340px;
+    box-shadow: 12px 12px 48px rgba(92,61,143,0.08);
+    position: relative;
+  }
+  .hero-card::before {
+    content: '';
+    position: absolute; top: -8px; left: -8px; right: 8px; bottom: 8px;
+    border: 1px solid var(--purple-mid);
+    opacity: 0.25;
+    pointer-events: none;
+  }
+  .hc-tag {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--purple);
+    background: var(--purple-light);
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .hc-stat { margin-bottom: 1.25rem; }
+  .hc-stat-num {
+    font-family: var(--serif);
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--purple);
+    line-height: 1;
+  }
+  .hc-stat-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+  .hc-divider { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
+  .hc-row { display: flex; gap: 1.5rem; }
+  .hc-mini-num {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--ink);
+  }
+  .hc-mini-label { font-size: 0.73rem; color: var(--muted); margin-top: 0.1rem; }
+
+  /* ── SECTIONS ── */
+  section { padding: 7rem 4rem; }
+  section:nth-child(even) { background: var(--off-white); }
+
+  .section-header { margin-bottom: 4rem; }
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple);
+    display: flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .section-label::before { content: ''; width: 24px; height: 1px; background: var(--purple); }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+  .section-title em { font-style: italic; color: var(--purple); }
+
+  /* ── ABOUT ── */
+  #about .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .about-aside {}
+  .about-initials {
+    width: 140px; height: 140px;
+    background: var(--purple-light);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--purple);
+    margin-bottom: 2rem;
+    border: 1px solid var(--purple-mid);
+    opacity: 0.6;
+  }
+  .about-contact-item {
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .aci-icon {
+    width: 28px; height: 28px; min-width: 28px;
+    background: var(--purple-light);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--purple);
+    font-size: 0.85rem;
+    margin-top: 0.1rem;
+  }
+  .aci-text { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.5; }
+  .aci-text a { color: var(--purple); text-decoration: none; }
+  .about-main {}
+  .about-p { font-size: 1rem; color: var(--ink-mid); line-height: 1.85; margin-bottom: 1.25rem; }
+  .about-highlights {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 2.5rem;
+  }
+  .ah-item {
+    background: var(--white);
+    padding: 1.5rem;
+  }
+  section:nth-child(even) .ah-item { background: var(--off-white); }
+  .ah-num {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--purple);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .ah-label { font-size: 0.82rem; color: var(--muted); }
+
+  /* ── EXPERIENCE ── */
+  .timeline { position: relative; padding-left: 2.5rem; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 0.75rem; bottom: 0;
+    width: 1px; background: var(--border);
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  .tl-item.visible { opacity: 1; transform: none; }
+  .tl-dot {
+    position: absolute; left: -2.5rem;
+    top: 0.55rem;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--purple);
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 1px var(--purple);
+  }
+  section:nth-child(even) .tl-dot { border-color: var(--off-white); }
+  .tl-period {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .tl-role {
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+  }
+  .tl-company {
+    font-size: 0.85rem;
+    color: var(--purple);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .tl-bullets { list-style: none; }
+  .tl-bullets li {
+    font-size: 0.9rem;
+    color: var(--ink-mid);
+    line-height: 1.7;
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.4rem;
+  }
+  .tl-bullets li::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: var(--purple);
+    font-size: 0.75rem;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .edu-card {
+    background: var(--white);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  .edu-card.visible { opacity: 1; transform: none; }
+  section:nth-child(even) .edu-card { background: var(--off-white); }
+  .edu-card::after {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--purple);
+    transition: height 0.5s 0.3s;
+  }
+  .edu-card.visible::after { height: 100%; }
+  .edu-period {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+  .edu-degree {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+  .edu-school {
+    font-size: 0.85rem;
+    color: var(--purple);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .edu-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--purple-light);
+    color: var(--purple);
+    padding: 0.25rem 0.65rem;
+    margin-bottom: 1rem;
+  }
+  .edu-modules {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ── SKILLS ── */
+  .skills-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .skill-group { margin-bottom: 2.5rem; }
+  .skill-group-title {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .skill-tag {
+    font-size: 0.82rem;
+    color: var(--ink-mid);
+    background: var(--purple-pale);
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.9rem;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    cursor: default;
+  }
+  .skill-tag:hover {
+    background: var(--purple);
+    color: #fff;
+    border-color: var(--purple);
+  }
+  .lang-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem;
+  }
+  .lang-level {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── PROJECTS / CERTIFICATIONS ── */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .cert-card {
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+    background: var(--white);
+    position: relative;
+    transition: box-shadow 0.25s, transform 0.25s;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.4s, transform 0.4s, box-shadow 0.25s;
+  }
+  .cert-card.visible { opacity: 1; transform: none; }
+  .cert-card:hover { box-shadow: 8px 8px 32px rgba(92,61,143,0.1); transform: translateY(-3px) !important; }
+  section:nth-child(even) .cert-card { background: var(--off-white); }
+  .cert-icon {
+    width: 36px; height: 36px;
+    background: var(--purple-light);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--purple);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .cert-title { font-size: 0.92rem; font-weight: 500; color: var(--ink); margin-bottom: 0.4rem; line-height: 1.4; }
+  .cert-org { font-size: 0.78rem; color: var(--muted); }
+
+  /* ── ACHIEVEMENTS ── */
+  .ach-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .ach-item {
+    display: flex; gap: 2rem; align-items: flex-start;
+    background: var(--white);
+    padding: 1.75rem 2rem;
+    opacity: 0; transform: translateX(-20px);
+    transition: opacity 0.4s, transform 0.4s;
+  }
+  .ach-item.visible { opacity: 1; transform: none; }
+  section:nth-child(even) .ach-item { background: var(--off-white); }
+  .ach-index {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--purple);
+    opacity: 0.4;
+    min-width: 2rem;
+    line-height: 1;
+  }
+  .ach-content {}
+  .ach-title { font-size: 0.95rem; font-weight: 500; color: var(--ink); margin-bottom: 0.3rem; }
+  .ach-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--ink); }
+  #contact .section-label { color: var(--purple-mid); }
+  #contact .section-label::before { background: var(--purple-mid); }
+  #contact .section-title { color: #fff; }
+  #contact .section-title em { color: var(--purple-mid); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .contact-text { font-size: 1rem; color: rgba(255,255,255,0.55); line-height: 1.85; margin-bottom: 2.5rem; }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .cl-item {
+    display: flex; align-items: center; gap: 1rem;
+    text-decoration: none;
+    padding: 1rem 1.25rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: border-color 0.25s, background 0.25s;
+  }
+  .cl-item:hover { border-color: var(--purple-mid); background: rgba(123,82,184,0.1); }
+  .cl-icon {
+    width: 36px; height: 36px;
+    background: rgba(123,82,184,0.2);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--purple-mid);
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .cl-text { font-size: 0.88rem; color: rgba(255,255,255,0.75); }
+
+  .contact-form {}
+  .cf-group { margin-bottom: 1.5rem; }
+  .cf-group label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0.5rem;
+  }
+  .cf-group input,
+  .cf-group textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    padding: 0.85rem 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+  }
+  .cf-group input:focus,
+  .cf-group textarea:focus { border-color: var(--purple-mid); }
+  .cf-group input::placeholder,
+  .cf-group textarea::placeholder { color: rgba(255,255,255,0.2); }
+  .btn-send {
+    width: 100%;
+    padding: 1rem;
+    background: var(--purple);
+    border: none;
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.2s;
+  }
+  .btn-send:hover { background: var(--purple-mid); transform: translateY(-2px); }
+  .send-note { font-size: 0.75rem; color: rgba(255,255,255,0.35); text-align: center; margin-top: 0.75rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #110e16;
+    text-align: center;
+    padding: 2rem 4rem;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── MOBILE NAV ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--border); padding: 1.5rem; gap: 1.25rem; }
+    .nav-links.open { display: flex; }
+    .hamburger { display: flex; }
+  }
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; text-align: center; }
+    #hero::before { width: 100%; height: 40%; top: auto; bottom: 0; clip-path: none; opacity: 0.5; }
+    .hero-eyebrow { justify-content: center; }
+    .hero-desc { margin: 0 auto 2rem; }
+    .hero-cta { justify-content: center; }
+    .hero-visual { margin-top: 2rem; }
+    #about .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-highlights { grid-template-columns: 1fr 1fr; }
+    .skills-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    section { padding: 4rem 1.5rem; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .about-initials { margin: 0 auto 2rem; }
+    .about-aside { text-align: center; }
+    .about-contact-item { justify-content: center; }
+  }
+  @media (max-width: 600px) {
+    .about-highlights { grid-template-columns: 1fr; }
+    .hc-row { flex-wrap: wrap; }
+    footer { padding: 1.5rem; }
+  }
+
+  /* ── SCROLL REVEAL HELPERS ── */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
+  .reveal.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#hero">MST</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Certifications</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Finance · Audit · Analytics</p>
+    <h1 class="hero-name">Merina<br><em>Sara Thomas</em></h1>
+    <p class="hero-desc">ACCA part-qualified finance professional with Big 4 audit experience, advanced analytics skills, and a Gold Medal academic record — available immediately in Ireland.</p>
+    <div class="hero-cta">
+      <a href="#experience" class="btn-primary">View Experience</a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="hc-tag">At a Glance</div>
+      <div class="hc-stat">
+        <div class="hc-stat-num">10<span style="font-size:1.5rem">/13</span></div>
+        <div class="hc-stat-label">ACCA Exams Completed</div>
+      </div>
+      <hr class="hc-divider">
+      <div class="hc-row">
+        <div>
+          <div class="hc-mini-num">2+</div>
+          <div class="hc-mini-label">Years at Deloitte</div>
+        </div>
+        <div>
+          <div class="hc-mini-num">9.74</div>
+          <div class="hc-mini-label">BCom CGPA</div>
+        </div>
+        <div>
+          <div class="hc-mini-num">6</div>
+          <div class="hc-mini-label">Languages</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header reveal">
+    <p class="section-label">About Me</p>
+    <h2 class="section-title">Where rigour<br>meets <em>curiosity</em></h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-aside reveal">
+      <div class="about-initials">MST</div>
+      <div class="about-contact-item">
+        <div class="aci-icon">📍</div>
+        <div class="aci-text">Galway, Ireland<br><span style="font-size:0.78rem;color:var(--muted)">Stamp 1G Visa · Available Immediately</span></div>
+      </div>
+      <div class="about-contact-item">
+        <div class="aci-icon">📞</div>
+        <div class="aci-text"><a href="tel:+353894595205">+353 89 459 5205</a></div>
+      </div>
+      <div class="about-contact-item">
+        <div class="aci-icon">✉️</div>
+        <div class="aci-text"><a href="mailto:merinasarathomas@gmail.com">merinasarathomas@gmail.com</a></div>
+      </div>
+      <div class="about-contact-item">
+        <div class="aci-icon">🔗</div>
+        <div class="aci-text"><a href="https://linkedin.com" target="_blank">LinkedIn Profile</a></div>
+      </div>
+    </div>
+    <div class="about-main reveal">
+      <p class="about-p">I'm a results-driven finance professional with hands-on audit experience at Deloitte, currently completing an MSc in International Accounting & Analytics at the University of Galway. My approach combines technical rigour — built through Big 4 audit work and advanced ACCA qualifications — with a genuine enthusiasm for data-driven decision-making.</p>
+      <p class="about-p">Having worked across international teams in both audit and compliance roles, I bring a global perspective to financial analysis, internal controls, and risk assessment. My academic record — Gold Medal, 9.74 CGPA — reflects the same attention to detail I apply to every professional engagement.</p>
+      <p class="about-p">I'm actively seeking Audit Analyst or Part-Qualified Accountant roles across Ireland where I can contribute immediately and grow toward full ACCA qualification.</p>
+      <div class="about-highlights">
+        <div class="ah-item">
+          <div class="ah-num">Big 4</div>
+          <div class="ah-label">Deloitte Experience</div>
+        </div>
+        <div class="ah-item">
+          <div class="ah-num">🥇</div>
+          <div class="ah-label">Gold Medalist · BCom</div>
+        </div>
+        <div class="ah-item">
+          <div class="ah-num">ACCA</div>
+          <div class="ah-label">10 of 13 exams passed</div>
+        </div>
+        <div class="ah-item">
+          <div class="ah-num">IFRS</div>
+          <div class="ah-label">Advanced Financial Reporting</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header reveal">
+    <p class="section-label">Professional Experience</p>
+    <h2 class="section-title">Career <em>Journey</em></h2>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">Jan 2025 – May 2025 · Hyderabad, India</div>
+      <div class="tl-role">Compliance Specialist (Audit Support)</div>
+      <div class="tl-company">Source One – Supporting Client: Deloitte</div>
+      <ul class="tl-bullets">
+        <li>Maintained adherence to organisational policies and regulatory requirements, applying procedural compliance standards directly analogous to external audit frameworks.</li>
+        <li>Conducted detailed data analysis to verify accuracy and integrity of records, mirroring substantive testing procedures used in financial audits.</li>
+        <li>Managed confidential employee data under GDPR and data-protection standards, ensuring zero compliance breaches across the engagement period.</li>
+        <li>Collaborated with international stakeholders across time zones to align processes and deliver audit-ready documentation, equivalent to global audit engagements.</li>
+        <li>Identified and implemented process improvements that increased accuracy and reduced cycle time, reflecting continuous improvement principles in audit operations.</li>
+        <li>Utilised R-Studio and AWS for data management and regulatory reporting tasks.</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">Sep 2023 – May 2024 · Hyderabad, India</div>
+      <div class="tl-role">Audit Analyst</div>
+      <div class="tl-company">Deloitte</div>
+      <ul class="tl-bullets">
+        <li>Executed audit procedures to verify compliance with organisational policies and regulatory standards, gaining hands-on experience in a Big 4 assurance environment.</li>
+        <li>Performed quantitative data analysis on financial records to ensure accuracy and completeness, supporting the integrity of audit conclusions.</li>
+        <li>Safeguarded sensitive client information in line with data-protection standards, maintaining professional confidentiality throughout the engagement.</li>
+        <li>Engaged with international stakeholders to align cross-border audit processes, strengthening understanding of multi-jurisdictional compliance requirements.</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">Jun 2024 – Jul 2024 · India</div>
+      <div class="tl-role">Content Writing / Marketing Intern</div>
+      <div class="tl-company">Kshitiksha Foundation (NGO)</div>
+      <ul class="tl-bullets">
+        <li>Earned an "S" grade (highest performance band) for consistently meeting quality and deadline standards.</li>
+        <li>Awarded a Certificate of Appreciation for outstanding contributions to social-awareness campaigns.</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-period">Jun 2022 – Aug 2022 · India</div>
+      <div class="tl-role">Sales & Marketing Management Trainee</div>
+      <div class="tl-company">Agile Capital Services</div>
+      <ul class="tl-bullets">
+        <li>Analysed market trends and sales data to produce actionable insights informing strategic decisions.</li>
+        <li>Conducted comprehensive market research to identify high-potential clients, honing due-diligence and investigative competencies.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header reveal">
+    <p class="section-label">Education</p>
+    <h2 class="section-title">Academic <em>Foundation</em></h2>
+  </div>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-period">Sep 2025 – Aug 2026</div>
+      <div class="edu-degree">MSc International Accounting & Analytics</div>
+      <div class="edu-school">University of Galway, Ireland</div>
+      <div class="edu-modules">Advanced IFRS · Complex Financial Statement Analysis · Audit Planning · Risk Assessment Procedures · Capital Structure & Investment Appraisal<br><br>
+      <em>Art Society Treasurer · Economics Society Sponsorship Lead & Vice PRO · Makerspace Volunteer</em></div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-period">Jul 2023 – May 2025</div>
+      <div class="edu-degree">MCom International Finance</div>
+      <div class="edu-school">Jain Online University</div>
+      <div class="edu-badge">GPA 9.0 · Distinction</div>
+      <div class="edu-modules">Advanced Financial Accounting · Advanced Performance Management · Strategic Business Leadership · Financial Modelling · Audit & Assurance · Advanced Audit & Assurance<br><br>
+      16 specialised modules + distinction-level research project</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-period">Jun 2020 – Apr 2023</div>
+      <div class="edu-degree">BCom International Accounting & Finance</div>
+      <div class="edu-school">Loyola Academy Degree & PG College, India</div>
+      <div class="edu-badge">CGPA 9.74 · Gold Medalist 🥇</div>
+      <div class="edu-modules">International Accounting Standards · Corporate Finance · Auditing · Taxation · Management Accounting · Business Law · Quantitative Methods<br><br>
+      <em>Department Culture Representative</em></div>
+    </div>
+  </div>
+
+  <div style="margin-top:3rem;" class="reveal">
+    <div class="section-label" style="margin-bottom:1.5rem">Professional Qualification</div>
+    <div style="display:inline-flex;align-items:center;gap:2rem;border:1px solid var(--border);padding:1.75rem 2.5rem;background:var(--white);">
+      <div>
+        <div style="font-family:var(--serif);font-size:2.5rem;font-weight:300;color:var(--purple);line-height:1">10<span style="font-size:1.2rem">/13</span></div>
+        <div style="font-size:0.78rem;color:var(--muted);margin-top:0.3rem">Exams Completed</div>
+      </div>
+      <div style="width:1px;height:60px;background:var(--border)"></div>
+      <div>
+        <div style="font-size:1rem;font-weight:500;color:var(--ink)">ACCA — Association of Chartered Certified Accountants</div>
+        <div style="font-size:0.85rem;color:var(--muted);margin-top:0.25rem">Professional Level · Currently pursuing remaining 3 exams</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS / CERTIFICATIONS -->
+<section id="projects">
+  <div class="section-header reveal">
+    <p class="section-label">Certifications & Training</p>
+    <h2 class="section-title">Continuous <em>Learning</em></h2>
+  </div>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-icon">📋</div>
+      <div class="cert-title">Audit and Due Diligence Foundations</div>
+      <div class="cert-org">NASBA</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">💹</div>
+      <div class="cert-title">Virtual Internship Program — Financial Analysis & Data</div>
+      <div class="cert-org">JP Morgan (FORGE Platform)</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">📊</div>
+      <div class="cert-title">Strategic Planning & Business Analysis</div>
+      <div class="cert-org">Oxford Home Study Centre</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🗣️</div>
+      <div class="cert-title">Business Communication Skills</div>
+      <div class="cert-org">Udemy</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">🌱</div>
+      <div class="cert-title">Business and Sustainable Development</div>
+      <div class="cert-org">NPTEL</div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header reveal">
+    <p class="section-label">Skills</p>
+    <h2 class="section-title">Technical <em>Toolkit</em></h2>
+  </div>
+  <div class="skills-layout">
+    <div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Audit & Finance</div>
+        <div class="skill-tags">
+          <span class="skill-tag">IFRS / Financial Reporting</span>
+          <span class="skill-tag">External Audit</span>
+          <span class="skill-tag">Internal Audit</span>
+          <span class="skill-tag">Risk Assessment</span>
+          <span class="skill-tag">Internal Controls</span>
+          <span class="skill-tag">Audit Planning</span>
+          <span class="skill-tag">Substantive Testing</span>
+          <span class="skill-tag">Capital Appraisal</span>
+          <span class="skill-tag">Financial Statement Analysis</span>
+          <span class="skill-tag">GDPR / Compliance</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Data & Analytics</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Excel (Financial Modelling)</span>
+          <span class="skill-tag">Pivot Tables</span>
+          <span class="skill-tag">Power BI Dashboards</span>
+          <span class="skill-tag">R-Studio</span>
+          <span class="skill-tag">Quantitative Analysis</span>
+          <span class="skill-tag">Data Integrity Testing</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Cloud & Platforms</div>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">MS Office Suite</span>
+          <span class="skill-tag">Prompt Engineering</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Languages</div>
+        <div class="lang-item"><span>English</span><span class="lang-level">Fluent</span></div>
+        <div class="lang-item"><span>Hindi</span><span class="lang-level">Fluent</span></div>
+        <div class="lang-item"><span>Telugu</span><span class="lang-level">Fluent</span></div>
+        <div class="lang-item"><span>Malayalam</span><span class="lang-level">Conversational</span></div>
+        <div class="lang-item"><span>Tamil</span><span class="lang-level">Conversational</span></div>
+        <div class="lang-item"><span>Urdu</span><span class="lang-level">Conversational</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="section-header reveal">
+    <p class="section-label">Achievements</p>
+    <h2 class="section-title">Recognition & <em>Impact</em></h2>
+  </div>
+  <div class="ach-list">
+    <div class="ach-item">
+      <div class="ach-index">01</div>
+      <div class="ach-content">
+        <div class="ach-title">Gold Medalist — BCom International Accounting & Finance</div>
+        <div class="ach-desc">Graduated with CGPA 9.74, awarded Gold Medal for academic excellence at Loyola Academy Degree & PG College.</div>
+      </div>
+    </div>
+    <div class="ach-item">
+      <div class="ach-index">02</div>
+      <div class="ach-content">
+        <div class="ach-title">Inspire Award — Telangana State Government</div>
+        <div class="ach-desc">Government of Telangana recognition for outstanding academic and personal achievement.</div>
+      </div>
+    </div>
+    <div class="ach-item">
+      <div class="ach-index">03</div>
+      <div class="ach-content">
+        <div class="ach-title">National Webinar Speaker</div>
+        <div class="ach-desc">Invited speaker at national-level webinars organised by AIESEC and ACCA, representing subject matter expertise on finance and sustainable development.</div>
+      </div>
+    </div>
+    <div class="ach-item">
+      <div class="ach-index">04</div>
+      <div class="ach-content">
+        <div class="ach-title">Certificate of Appreciation — Kshitiksha Foundation</div>
+        <div class="ach-desc">Awarded for outstanding contributions to social-awareness campaigns, with an "S" grade (highest performance band).</div>
+      </div>
+    </div>
+    <div class="ach-item">
+      <div class="ach-index">05</div>
+      <div class="ach-content">
+        <div class="ach-title">MCom Distinction — Research Project</div>
+        <div class="ach-desc">Completed 16 specialised modules and a distinction-level research project with a GPA of 9.0 at Jain Online University.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header reveal">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Let's <em>Connect</em></h2>
+  </div>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-text">I'm actively seeking Audit Analyst, Part-Qualified Accountant, and Internal Audit roles across Ireland. Available to start immediately. Open to opportunities in Galway, Cork, Dublin, and beyond.</p>
+      <div class="contact-links">
+        <a href="tel:+353894595205" class="cl-item">
+          <div class="cl-icon">📞</div>
+          <div class="cl-text">+353 89 459 5205</div>
+        </a>
+        <a href="mailto:merinasarathomas@gmail.com" class="cl-item">
+          <div class="cl-icon">✉️</div>
+          <div class="cl-text">merinasarathomas@gmail.com</div>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="cl-item">
+          <div class="cl-icon">🔗</div>
+          <div class="cl-text">LinkedIn — Merina Sara Thomas</div>
+        </a>
+        <a href="#" class="cl-item">
+          <div class="cl-icon">📍</div>
+          <div class="cl-text">Galway, Ireland · Stamp 1G Visa</div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="cf-group">
+        <label>Your Name</label>
+        <input type="text" placeholder="Jane Smith">
+      </div>
+      <div class="cf-group">
+        <label>Your Email</label>
+        <input type="email" placeholder="jane@company.com">
+      </div>
+      <div class="cf-group">
+        <label>Message</label>
+        <textarea rows="5" placeholder="I'd like to discuss an opportunity with you..."></textarea>
+      </div>
+      <button class="btn-send" onclick="sendMessage()">Send Message</button>
+      <p class="send-note" id="sendNote"></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Merina Sara Thomas · Galway, Ireland · Built with care</p>
+</footer>
+
+<script>
+  // NAV scroll effect
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  // Mobile nav
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  const revealTargets = [
+    '.reveal', '.tl-item', '.edu-card', '.cert-card', '.ach-item'
+  ];
+  revealTargets.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => observer.observe(el));
+  });
+
+  // Stagger cert cards
+  document.querySelectorAll('.cert-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.07}s`;
+  });
+
+  // Contact form
+  function sendMessage() {
+    const note = document.getElementById('sendNote');
+    note.style.color = '#a87fe8';
+    note.textContent = '✓ Message sent! Merina will get back to you shortly.';
+    setTimeout(() => note.textContent = '', 4000);
+  }
+</script>
+</body>
+</html>
